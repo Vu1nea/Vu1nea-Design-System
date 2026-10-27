@@ -1,0 +1,107 @@
+{
+  ".svelte-kit/generated/client-optimized/app.js": {
+    "file": "_app/immutable/entry/app.BOQw1frg.js",
+    "name": "entry/app",
+    "src": ".svelte-kit/generated/client-optimized/app.js",
+    "isEntry": true,
+    "imports": [
+      "_DqO4OLV0.js",
+      "_xihTtKlq.js"
+    ],
+    "dynamicImports": [
+      ".svelte-kit/generated/client-optimized/nodes/0.js",
+      ".svelte-kit/generated/client-optimized/nodes/1.js",
+      ".svelte-kit/generated/client-optimized/nodes/2.js",
+      ".svelte-kit/generated/shared/error-template.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/0.js": {
+    "file": "_app/immutable/nodes/0.D94VX7YF.js",
+    "name": "nodes/0",
+    "src": ".svelte-kit/generated/client-optimized/nodes/0.js",
+    "isEntry": true,
+    "imports": [
+      "_DqO4OLV0.js",
+      "_xihTtKlq.js",
+      "_B1npe1F4.js"
+    ],
+    "css": [
+      "_app/immutable/assets/0.Dt0N8kLz.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/instrument-sans-latin-ext-wght-normal.B5bTHO_g.woff2",
+      "_app/immutable/assets/instrument-sans-latin-wght-normal.BbzFLZTg.woff2"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/1.js": {
+    "file": "_app/immutable/nodes/1.CsnfjJ6W.js",
+    "name": "nodes/1",
+    "src": ".svelte-kit/generated/client-optimized/nodes/1.js",
+    "isEntry": true,
+    "imports": [
+      "_DqO4OLV0.js",
+      "_CO98dUWF.js",
+      "_xihTtKlq.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/2.js": {
+    "file": "_app/immutable/nodes/2.fvBYQ9GT.js",
+    "name": "nodes/2",
+    "src": ".svelte-kit/generated/client-optimized/nodes/2.js",
+    "isEntry": true,
+    "imports": [
+      "_DqO4OLV0.js",
+      "_xihTtKlq.js",
+      "_B1npe1F4.js"
+    ],
+    "css": [
+      "_app/immutable/assets/2.CYS6TEEv.css"
+    ]
+  },
+  ".svelte-kit/generated/shared/error-template.js": {
+    "file": "_app/immutable/chunks/Bjy-W4x2.js",
+    "name": "error-template",
+    "src": ".svelte-kit/generated/shared/error-template.js",
+    "isDynamicEntry": true
+  },
+  "_B1npe1F4.js": {
+    "file": "_app/immutable/chunks/B1npe1F4.js",
+    "name": "triangle-alert",
+    "imports": [
+      "_DqO4OLV0.js",
+      "_xihTtKlq.js"
+    ]
+  },
+  "_CO98dUWF.js": {
+    "file": "_app/immutable/chunks/CO98dUWF.js",
+    "name": "client",
+    "imports": [
+      "_DqO4OLV0.js"
+    ]
+  },
+  "_DqO4OLV0.js": {
+    "file": "_app/immutable/chunks/DqO4OLV0.js",
+    "name": "index-client"
+  },
+  "_xihTtKlq.js": {
+    "file": "_app/immutable/chunks/xihTtKlq.js",
+    "name": "disclose-version"
+  },
+  "node_modules/@fontsource-variable/instrument-sans/files/instrument-sans-latin-ext-wght-normal.woff2": {
+    "file": "_app/immutable/assets/instrument-sans-latin-ext-wght-normal.B5bTHO_g.woff2",
+    "src": "node_modules/@fontsource-variable/instrument-sans/files/instrument-sans-latin-ext-wght-normal.woff2"
+  },
+  "node_modules/@fontsource-variable/instrument-sans/files/instrument-sans-latin-wght-normal.woff2": {
+    "file": "_app/immutable/assets/instrument-sans-latin-wght-normal.BbzFLZTg.woff2",
+    "src": "node_modules/@fontsource-variable/instrument-sans/files/instrument-sans-latin-wght-normal.woff2"
+  },
+  "node_modules/@sveltejs/kit/src/runtime/client/entry.js": {
+    "file": "_app/immutable/entry/start.Bif65Rux.js",
+    "name": "entry/start",
+    "src": "node_modules/@sveltejs/kit/src/runtime/client/entry.js",
+    "isEntry": true,
+    "imports": [
+      "_CO98dUWF.js"
+    ]
+  }
+}
