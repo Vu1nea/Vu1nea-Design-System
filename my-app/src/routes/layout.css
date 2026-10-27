@@ -7,12 +7,17 @@
 
 :root {
 	/* Primitives: grey */
+	--grey-50: #fafafa;
+	--grey-100: #f5f5f5;
 	--grey-200: #e6e6e6;
 	--grey-300: #d3d3d3;
+	--grey-400: #a3a3a3;
 	--grey-500: #727272;
 	--grey-600: #535353;
 	--grey-700: #404040;
 	--grey-800: #272727;
+	--grey-900: #1a1a1a;
+	--grey-950: #121212;
 
 	/* Primitives: brand (base / hover / active) */
 	--purple: #7f37ff;
@@ -43,7 +48,14 @@
 	--blue-950: #182d53;
 
 	/* Primitives: status */
+	--success-100: #d8f6d1;
+	--warning-100: #edefd5;
+	--danger-100: #ffdde2;
+	--info-100: #dceefd;
 	--danger-200: #ffc1ca;
+	--danger-700: #d60020;
+	--danger-800: #af051e;
+	--danger-900: #900c20;
 	--danger-300: #ff95a5;
 	--danger-500: #ff2646;
 	--danger-950: #50000c;
@@ -154,6 +166,14 @@
 	}
 	body {
 		@apply bg-background text-foreground;
+	}
+	button:not(:disabled),
+	[role='button']:not([aria-disabled='true']),
+	[role='radio'],
+	[role='option'],
+	summary,
+	label:has(input:not(:disabled)) {
+		cursor: pointer;
 	}
 	html {
 		@apply font-sans;

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Dialog as DialogPrimitive } from "bits-ui";
-	import XIcon from '@lucide/svelte/icons/x';
+	import { Icon } from "$lib/components/ui/icon/index.js";
 	import { Button } from "$lib/components/ui/button/index.js";
 	import { cn, type WithoutChildrenOrChild } from "$lib/utils.js";
 	import * as Dialog from "./index.js";
@@ -38,7 +38,7 @@
 			<DialogPrimitive.Close data-slot="dialog-close">
 				{#snippet child({ props })}
 					<Button variant="ghost" class="absolute top-1 right-1 text-(--grey-400)" size="icon" {...props}>
-						<XIcon  />
+						<Icon name="close" class="size-5" />
 						<span class="sr-only">Close</span>
 					</Button>
 				{/snippet}

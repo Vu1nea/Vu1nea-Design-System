@@ -28,7 +28,7 @@
 			<span
 				class={cn(
 					"grid size-[26px] shrink-0 place-items-center rounded-full border text-xs leading-4",
-					filled ? "border-primary bg-primary text-white" : "border-(--purple-400) text-(--purple-400)"
+					filled ? "border-primary bg-primary text-foreground" : "border-(--purple-400) text-(--purple-400)"
 				)}
 			>
 				{i + 1}<span class="sr-only"> ({status(i)})</span>

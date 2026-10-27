@@ -16,7 +16,7 @@
 		"[&:last-child[data-selected=true]_button]:rounded-r-(--cell-radius)",
 		"text-sm not-data-selected:hover:bg-(--grey-700) not-data-selected:hover:text-foreground",
 		"[&[data-today]:not([data-selected])]:ring-1 [&[data-today]:not([data-selected])]:ring-(--grey-500) [&[data-today]:not([data-selected])]:ring-inset",
-		"data-[selected]:bg-primary data-[selected]:text-white",
+		"data-[selected]:bg-primary data-[selected]:text-foreground",
 		// Outside months
 		"[&[data-outside-month]:not([data-selected])]:text-(--grey-400)",
 		// Disabled

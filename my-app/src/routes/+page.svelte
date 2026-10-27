@@ -15,10 +15,8 @@
 	import { Stepper } from '$lib/components/ui/stepper/index.js';
 	import { Menu, MenuItem } from '$lib/components/ui/menu/index.js';
 	import { StreakTracker } from '$lib/components/ui/streak-tracker/index.js';
-	import HomeIcon from '@lucide/svelte/icons/house';
-	import TargetIcon from '@lucide/svelte/icons/target';
-	import LightbulbIcon from '@lucide/svelte/icons/lightbulb';
-	import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
+	import { Icon } from '$lib/components/ui/icon/index.js';
+	import { DatePicker } from '$lib/components/ui/date-picker/index.js';
 	import type { DateValue } from '@internationalized/date';
 
 	const colors = ['purple', 'orange', 'blue', 'light', 'error'] as const;
@@ -120,10 +118,10 @@
 
 	<section class="flex flex-col gap-4">
 		<h2 class="text-2xl leading-7 font-bold">Banner</h2>
-		<Alert variant="success"><AlertDescription>You've been successfully logged in!</AlertDescription></Alert>
-		<Alert variant="info"><AlertDescription>You have permissions to do this!</AlertDescription></Alert>
-		<Alert variant="destructive"><AlertDescription>This will delete all files</AlertDescription></Alert>
-		<Alert variant="warning"><AlertDescription>Your password is insecure</AlertDescription></Alert>
+		<Alert variant="success"><Icon name="check-circle" /><AlertDescription>You've been successfully logged in!</AlertDescription></Alert>
+		<Alert variant="info"><Icon name="info" /><AlertDescription>You have permissions to do this!</AlertDescription></Alert>
+		<Alert variant="destructive"><Icon name="dangerous" /><AlertDescription>This will delete all files</AlertDescription></Alert>
+		<Alert variant="warning"><Icon name="warning" /><AlertDescription>Your password is insecure</AlertDescription></Alert>
 	</section>
 
 	<section class="flex flex-col gap-4">
@@ -171,6 +169,7 @@
 	<section class="grid gap-8 md:grid-cols-2">
 		<div class="flex flex-col gap-4">
 			<h2 class="text-2xl leading-7 font-bold">Date picker</h2>
+			<DatePicker label="Due date" required bind:value={date} />
 			<Calendar type="single" bind:value={date} />
 		</div>
 		<div class="flex flex-col gap-4">
@@ -188,13 +187,13 @@
 		<h2 class="text-2xl leading-7 font-bold">Menu</h2>
 		<Menu class="h-[420px]">
 			{#snippet header()}Mushpoint{/snippet}
-			<MenuItem href="#home" active>{#snippet icon()}<HomeIcon />{/snippet}Home</MenuItem>
-			<MenuItem href="#goals">{#snippet icon()}<TargetIcon />{/snippet}Goals</MenuItem>
-			<MenuItem href="#ideas">{#snippet icon()}<LightbulbIcon />{/snippet}Idea Vault</MenuItem>
+			<MenuItem href="#home" active>{#snippet icon()}<Icon name="home" />{/snippet}Home</MenuItem>
+			<MenuItem href="#goals">{#snippet icon()}<Icon name="target" />{/snippet}Goals</MenuItem>
+			<MenuItem href="#ideas">{#snippet icon()}<Icon name="idea" />{/snippet}Idea Vault</MenuItem>
 			{#snippet footer()}
 				<span class="bg-card grid size-10 place-items-center rounded-full text-sm font-bold" aria-hidden="true">VG</span>
 				<span class="flex-1 text-sm leading-5 font-bold">Vinodh Gnanakkan</span>
-				<ChevronDownIcon class="size-6" />
+				<Icon name="arrow-down" />
 			{/snippet}
 		</Menu>
 	</section>

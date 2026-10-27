@@ -21,11 +21,7 @@
 </script>
 
 <script lang="ts">
-	import InfoIcon from "@lucide/svelte/icons/info";
-	import CircleCheckIcon from "@lucide/svelte/icons/circle-check";
-	import TriangleAlertIcon from "@lucide/svelte/icons/triangle-alert";
-	import OctagonAlertIcon from "@lucide/svelte/icons/octagon-alert";
-	import XIcon from "@lucide/svelte/icons/x";
+	import { Icon } from "$lib/components/ui/icon/index.js";
 	import { cn } from "$lib/utils.js";
 
 	let {
@@ -44,8 +40,7 @@
 	} = $props();
 
 	const styles = $derived(flagVariants({ type }));
-	const icons = { info: InfoIcon, success: CircleCheckIcon, warning: TriangleAlertIcon, danger: OctagonAlertIcon };
-	const Icon = $derived(icons[type]);
+	const names = { info: "info", success: "check-circle", warning: "warning", danger: "dangerous" } as const;
 </script>
 
 <div
@@ -54,7 +49,7 @@
 	class={cn("bg-card text-foreground relative w-[min(566px,calc(100vw-2rem))] overflow-hidden", className)}
 >
 	<div class="flex items-center gap-2.5 py-4 pr-12 pl-4">
-		<Icon class={styles.icon()} aria-hidden="true" />
+		<Icon name={names[type]} class={styles.icon()} />
 		<p class="text-base leading-6">{message}</p>
 	</div>
 	{#if closeToast}
@@ -64,7 +59,7 @@
 			onclick={closeToast}
 			class="focus-visible:ring-ring/50 absolute top-0 right-0 flex size-11 items-center justify-center text-(--grey-400) transition-colors outline-none hover:text-foreground focus-visible:ring-3"
 		>
-			<XIcon class="size-4" />
+			<Icon name="close" class="size-5" />
 		</button>
 	{/if}
 	<div class={cn(styles.timer(), "flag-timer")} style="--flag-duration: {duration}ms" aria-hidden="true"></div>

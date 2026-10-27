@@ -27,7 +27,7 @@
 		aria-current={active ? "page" : undefined}
 		data-slot="menu-item"
 		class={cn(
-			"focus-visible:ring-ring/50 flex h-12 w-full items-center gap-4 rounded-md px-1.5 py-3 text-left text-base leading-6 font-medium text-foreground outline-none transition-colors hover:bg-white/5 focus-visible:ring-3 aria-[current=page]:bg-card [&_svg]:size-6 [&_svg]:shrink-0",
+			"focus-visible:ring-ring/50 flex h-12 w-full items-center gap-4 rounded-md px-1.5 py-3 text-left text-base leading-6 font-medium text-foreground outline-none transition-colors hover:bg-(--grey-800)/50 focus-visible:ring-3 aria-[current=page]:bg-card [&_svg]:size-6 [&_svg]:shrink-0",
 			className
 		)}
 		{...restProps}

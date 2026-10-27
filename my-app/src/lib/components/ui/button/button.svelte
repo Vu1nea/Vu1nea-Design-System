@@ -10,7 +10,7 @@
 				default: "",
 				outline: "border bg-transparent hover:bg-current/10 active:bg-current/20",
 				secondary: "bg-secondary text-secondary-foreground hover:bg-(--grey-500)",
-				ghost: "hover:bg-muted hover:text-foreground active:bg-(--grey-900)",
+				ghost: "hover:bg-(--grey-700) hover:text-foreground active:bg-(--grey-600)",
 				destructive: "",
 				link: "text-primary underline-offset-4 hover:underline",
 			},
@@ -34,12 +34,12 @@
 		},
 		compoundVariants: [
 			// Primary: white label in every state; fill darkens rest -> hover -> pressed (all >= 4.5:1)
-			{ variant: "default", color: "purple", class: "bg-primary text-white hover:bg-primary-hover active:bg-primary-active" },
+			{ variant: "default", color: "purple", class: "bg-primary text-foreground hover:bg-primary-hover active:bg-primary-active" },
 			{ variant: "default", color: "orange", class: "bg-orange text-white hover:bg-orange-hover active:bg-orange-active" },
-			{ variant: "default", color: "blue", class: "bg-blue text-white hover:bg-blue-hover active:bg-blue-active" },
+			{ variant: "default", color: "blue", class: "bg-blue text-foreground hover:bg-blue-hover active:bg-blue-active" },
 			{ variant: "default", color: "light", class: "bg-foreground text-background hover:bg-(--grey-200) active:bg-foreground" },
-			{ variant: "default", color: "error", class: "bg-(--danger-300) text-background hover:bg-(--danger-200) active:bg-(--danger-500)" },
-			{ variant: "destructive", class: "bg-(--danger-300) text-background hover:bg-(--danger-200) active:bg-(--danger-500)" },
+			{ variant: "default", color: "error", class: "bg-(--danger-700) text-foreground hover:bg-(--danger-800) active:bg-(--danger-900)" },
+			{ variant: "destructive", class: "bg-(--danger-700) text-foreground hover:bg-(--danger-800) active:bg-(--danger-900)" },
 			// Outline: border keeps the brand color; text is lifted a step so it clears 4.5:1 on dark
 			{ variant: "outline", color: "purple", class: "border-primary text-(--purple-400)" },
 			{ variant: "outline", color: "orange", class: "border-(--orange-600) text-(--orange-600)" },

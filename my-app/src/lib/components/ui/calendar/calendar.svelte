@@ -1,5 +1,7 @@
 <script lang="ts">
-	import { isEqualMonth, type DateValue } from "@internationalized/date";
+	import { getLocalTimeZone, isEqualMonth, today, type DateValue } from "@internationalized/date";
+	import { buttonVariants } from "$lib/components/ui/button/index.js";
+	import { Icon } from "$lib/components/ui/icon/index.js";
 	import { Calendar as CalendarPrimitive } from "bits-ui";
 	import { cn, type WithoutChildrenOrChild } from "$lib/utils.js";
 	import * as Calendar from "./index.js";
@@ -32,6 +34,15 @@
 		day?: Snippet<[{ day: DateValue; outsideMonth: boolean }]>;
 	} = $props();
 
+	/** Jump the visible month by whole years. */
+	function shiftYears(n: number) {
+		const current = value && !Array.isArray(value) ? (value as DateValue) : undefined;
+		const base = placeholder ?? current ?? today(getLocalTimeZone());
+		placeholder = base.add({ years: n });
+	}
+
+	const yearButton = cn(buttonVariants({ variant: "ghost" }), "size-(--cell-size) p-0 select-none");
+
 	const monthFormat = $derived.by(() => {
 		if (monthFormatProp) return monthFormatProp;
 		if (captionLayout.startsWith("dropdown")) return "short";
@@ -61,8 +72,18 @@ get along, so we shut typescript up by casting `value` to `never`.
 	{#snippet children({ months, weekdays })}
 		<Calendar.Months>
 			<Calendar.Nav>
-				<Calendar.PrevButton variant={buttonVariant} />
-				<Calendar.NextButton variant={buttonVariant} />
+				<div class="flex">
+					<button type="button" class={yearButton} aria-label="Previous year" onclick={() => shiftYears(-1)}>
+						<Icon name="chevrons-left" class="size-5" />
+					</button>
+					<Calendar.PrevButton variant={buttonVariant} />
+				</div>
+				<div class="flex">
+					<Calendar.NextButton variant={buttonVariant} />
+					<button type="button" class={yearButton} aria-label="Next year" onclick={() => shiftYears(1)}>
+						<Icon name="chevrons-right" class="size-5" />
+					</button>
+				</div>
 			</Calendar.Nav>
 			{#each months as month, monthIndex (month)}
 				<Calendar.Month>
