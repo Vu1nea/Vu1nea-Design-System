@@ -177,5 +177,31 @@
 	}
 	html {
 		@apply font-sans;
+		color-scheme: dark;
+	}
+	* {
+		scrollbar-width: thin;
+		scrollbar-color: var(--grey-600) transparent;
+	}
+	*:hover {
+		scrollbar-color: var(--grey-500) transparent;
+	}
+	@supports selector(::-webkit-scrollbar) {
+		*::-webkit-scrollbar {
+			width: 10px;
+			height: 10px;
+		}
+		*::-webkit-scrollbar-track,
+		*::-webkit-scrollbar-corner {
+			background: transparent;
+		}
+		*::-webkit-scrollbar-thumb {
+			background: var(--grey-600);
+			border-radius: 9999px;
+			border: 2px solid var(--background);
+		}
+		*::-webkit-scrollbar-thumb:hover {
+			background: var(--grey-500);
+		}
 	}
 }

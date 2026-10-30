@@ -23,7 +23,7 @@
 		{@const filled = i <= current}
 		<li
 			aria-current={i === current ? "step" : undefined}
-			class={cn(vertical ? "grid grid-cols-[26px_1fr] gap-x-3" : "flex items-center gap-2")}
+			class={cn(vertical ? "grid grid-cols-[26px_1fr] gap-x-3" : "flex items-center", !vertical && i < steps.length - 1 && "flex-1")}
 		>
 			<span
 				class={cn(
@@ -34,14 +34,14 @@
 				{i + 1}<span class="sr-only"> ({status(i)})</span>
 			</span>
 			{#if step.label}
-				<span class={cn("text-sm leading-5 text-foreground", vertical && "self-center")}>{step.label}</span>
+				<span class={cn("text-sm leading-5 text-foreground", vertical ? "self-center" : "mx-2")}>{step.label}</span>
 			{:else if vertical}
 				<span></span>
 			{/if}
 			{#if i < steps.length - 1}
 				<span
 					aria-hidden="true"
-					class={cn("bg-(--grey-400)", vertical ? "col-start-1 mx-auto h-[53px] w-px" : "h-px w-[53px]")}
+					class={cn("bg-(--grey-400)", vertical ? "col-start-1 mx-auto h-[53px] w-px" : "h-px min-w-[53px] flex-1")}
 				></span>
 			{/if}
 		</li>

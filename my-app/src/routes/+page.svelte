@@ -17,12 +17,21 @@
 	import { StreakTracker } from '$lib/components/ui/streak-tracker/index.js';
 	import { Icon } from '$lib/components/ui/icon/index.js';
 	import { DatePicker } from '$lib/components/ui/date-picker/index.js';
+	import { Checkbox } from '$lib/components/ui/checkbox/index.js';
+	import { Switch } from '$lib/components/ui/switch/index.js';
+	import { Textarea } from '$lib/components/ui/textarea/index.js';
+	import { Avatar } from '$lib/components/ui/avatar/index.js';
+	import * as Tabs from '$lib/components/ui/tabs/index.js';
+	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
 	import type { DateValue } from '@internationalized/date';
 
 	const colors = ['purple', 'orange', 'blue', 'light', 'error'] as const;
 	const badgeColors = ['purple', 'orange', 'blue', 'light'] as const;
 	let fruit = $state('');
 	let radio = $state('a');
+	let agreed = $state(true);
+	let notify = $state(true);
+	let tab = $state('overview');
 	let date = $state<DateValue | undefined>();
 	const streak = Array.from({ length: 30 }, (_, i) => i < 11 || i === 14 || i === 15);
 </script>
@@ -113,6 +122,68 @@
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in elit et leo mollis facilisis nec in turpis.
 				</Card.Content>
 			</Card.Root>
+		</div>
+	</section>
+
+	<section class="grid gap-8 md:grid-cols-2">
+		<div class="flex flex-col gap-4">
+			<h2 class="text-2xl leading-7 font-bold">Checkbox, Switch and Textarea</h2>
+			<div class="flex items-center gap-2">
+				<Checkbox id="c1" bind:checked={agreed} />
+				<Label for="c1" class="text-xs leading-4 text-foreground">Accept terms</Label>
+			</div>
+			<div class="flex items-center gap-2">
+				<Checkbox id="c2" indeterminate />
+				<Label for="c2" class="text-xs leading-4 text-foreground">Indeterminate</Label>
+			</div>
+			<div class="flex items-center gap-2">
+				<Checkbox id="c3" disabled />
+				<Label for="c3" class="text-xs leading-4 text-foreground">Disabled</Label>
+			</div>
+			<div class="flex items-center gap-2">
+				<Switch id="s1" bind:checked={notify} />
+				<Label for="s1" class="text-xs leading-4 text-foreground">Notifications</Label>
+			</div>
+			<div class="flex items-center gap-2">
+				<Switch id="s2" disabled />
+				<Label for="s2" class="text-xs leading-4 text-foreground">Disabled</Label>
+			</div>
+			<div class="flex w-60 flex-col gap-1">
+				<Label for="bio">Bio</Label>
+				<Textarea id="bio" placeholder="Tell us about yourself" />
+				<p class="text-xs leading-4 text-(--grey-400)">Max 200 characters.</p>
+			</div>
+		</div>
+
+		<div class="flex flex-col gap-4">
+			<h2 class="text-2xl leading-7 font-bold">Avatar and Tooltip</h2>
+			<div class="flex items-center gap-4">
+				<Avatar size="sm" fallback="VG" />
+				<Avatar fallback="VG" />
+				<Avatar size="lg" fallback="VG" />
+			</div>
+			<Tooltip.Provider>
+				<Tooltip.Root>
+					<Tooltip.Trigger>
+						{#snippet child({ props })}
+							<Button {...props} variant="outline" color="light" class="w-fit">Hover me</Button>
+						{/snippet}
+					</Tooltip.Trigger>
+					<Tooltip.Content>Helpful hint</Tooltip.Content>
+				</Tooltip.Root>
+			</Tooltip.Provider>
+
+			<h2 class="mt-4 text-2xl leading-7 font-bold">Tabs</h2>
+			<Tabs.Root bind:value={tab}>
+				<Tabs.List>
+					<Tabs.Trigger value="overview">Overview</Tabs.Trigger>
+					<Tabs.Trigger value="activity">Activity</Tabs.Trigger>
+					<Tabs.Trigger value="settings">Settings</Tabs.Trigger>
+				</Tabs.List>
+				<Tabs.Content value="overview">Overview content.</Tabs.Content>
+				<Tabs.Content value="activity">Activity content.</Tabs.Content>
+				<Tabs.Content value="settings">Settings content.</Tabs.Content>
+			</Tabs.Root>
 		</div>
 	</section>
 

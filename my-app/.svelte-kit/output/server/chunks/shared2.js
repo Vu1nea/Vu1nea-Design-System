@@ -1,4 +1,4 @@
-import { Bt as noop, It as safe_not_equal } from "./index-server.js";
+import { Ut as noop, zt as safe_not_equal } from "./server.js";
 // node_modules/svelte/src/store/shared/index.js
 /** @import { Readable, StartStopNotifier, Subscriber, Unsubscriber, Updater, Writable } from '../public.js' */
 /** @import { Stores, StoresValues, SubscribeInvalidateTuple } from '../private.js' */

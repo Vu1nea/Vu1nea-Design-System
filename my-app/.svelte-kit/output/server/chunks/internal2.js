@@ -1,5 +1,6 @@
-import { b as setContext, l as derived, m as render, pt as async_mode_flag } from "./index-server.js";
+import "./index-server.js";
 import "./internal.js";
+import { a as derived, b as setContext, ht as async_mode_flag, u as render } from "./server.js";
 import { t as asClassComponent$1 } from "./legacy-client.js";
 /**
 * `$env/dynamic/public`
@@ -88,10 +89,10 @@ value: (onfulfilled, onrejected) => {
 // .svelte-kit/generated/root.svelte
 function Root($$renderer, $$props) {
 	$$renderer.component(($$renderer) => {
-		let { stores, page, constructors, components = [], form, data_0 = null, data_1 = null } = $$props;
+		let { stores, page, constructors, components = [], form, data_0 = null, data_1 = null, data_2 = null } = $$props;
 		setContext("__svelte__", stores);
 		stores.page.set(page);
-		const Pyramid_1 = derived(() => constructors[1]);
+		const Pyramid_2 = derived(() => constructors[2]);
 		if (constructors[1]) {
 			$$renderer.push("<!--[0-->");
 			const Pyramid_0 = constructors[0];
@@ -102,18 +103,53 @@ function Root($$renderer, $$props) {
 					form,
 					params: page.params,
 					children: ($$renderer) => {
-						if (Pyramid_1()) {
-							$$renderer.push("<!--[-->");
-							Pyramid_1()($$renderer, {
-								data: data_1,
-								form,
-								params: page.params
-							});
-							$$renderer.push("<!--]-->");
+						if (constructors[2]) {
+							$$renderer.push("<!--[0-->");
+							const Pyramid_1 = constructors[1];
+							if (Pyramid_1) {
+								$$renderer.push("<!--[-->");
+								Pyramid_1($$renderer, {
+									data: data_1,
+									form,
+									params: page.params,
+									children: ($$renderer) => {
+										if (Pyramid_2()) {
+											$$renderer.push("<!--[-->");
+											Pyramid_2()($$renderer, {
+												data: data_2,
+												form,
+												params: page.params
+											});
+											$$renderer.push("<!--]-->");
+										} else {
+											$$renderer.push("<!--[!-->");
+											$$renderer.push("<!--]-->");
+										}
+									},
+									$$slots: { default: true }
+								});
+								$$renderer.push("<!--]-->");
+							} else {
+								$$renderer.push("<!--[!-->");
+								$$renderer.push("<!--]-->");
+							}
 						} else {
-							$$renderer.push("<!--[!-->");
-							$$renderer.push("<!--]-->");
+							$$renderer.push("<!--[-1-->");
+							const Pyramid_1 = constructors[1];
+							if (Pyramid_1) {
+								$$renderer.push("<!--[-->");
+								Pyramid_1($$renderer, {
+									data: data_1,
+									form,
+									params: page.params
+								});
+								$$renderer.push("<!--]-->");
+							} else {
+								$$renderer.push("<!--[!-->");
+								$$renderer.push("<!--]-->");
+							}
 						}
+						$$renderer.push(`<!--]-->`);
 					},
 					$$slots: { default: true }
 				});
@@ -178,7 +214,7 @@ var options = {
 		app: ({ head, body, assets, nonce, env }) => "<!doctype html>\n<html lang=\"en\" class=\"dark\">\n	<head>\n		<meta charset=\"utf-8\" />\n		<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n		<meta name=\"text-scale\" content=\"scale\" />\n		" + head + "\n	</head>\n	<body data-sveltekit-preload-data=\"hover\">\n		<div style=\"display: contents\">" + body + "</div>\n	</body>\n</html>\n",
 		error: error_template_default
 	},
-	version_hash: "1w1y56l"
+	version_hash: "1x3j53s"
 };
 async function get_hooks() {
 	let handle;
